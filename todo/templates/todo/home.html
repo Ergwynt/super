@@ -6,12 +6,8 @@
   <p>Total task: <strong>{{ num_tasks }}</strong> task{{num_tasks|pluralize}}</p>
   {% for task in tasks%}
     <h2>{{task.title}}</h2>
-
     <div class="task-date">{{task.created_at}}</div>
-    
-    
     <p>{{task.content|truncatewords:20}}<a href="{% url 'todo:task_detail' task.slug %}">[Read more]</a></p>
-    
     {% if task.task_made == False %}
       <div class= "task-done">❌</div>
     {% else %}
