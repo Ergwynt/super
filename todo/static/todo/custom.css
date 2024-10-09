@@ -43,6 +43,13 @@ a {
 a:hover {
   text-decoration: underline;
 }
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  color: #f4f4f4;
+  text-decoration: none;
+}
 
 .button {
   padding: 8px 12px;

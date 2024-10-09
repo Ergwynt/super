@@ -7,12 +7,17 @@
   {% for task in tasks%}
     <h2>{{task.title}}</h2>
     <div class="task-date">{{task.created_at}}</div>
-    <p>{{task.content|truncatewords:20}}<a href="{% url 'todo:task_detail' task.slug %}">[Read more]</a></p>
+    <p>{{task.content|truncatewords:20}}</p>
     {% if task.task_made %}
-      <div class= "task-done">✅</div>
+      <div class= "task-done">Tarea completada: ✅</div>
     {% else %}
-      <div class= "task-done">❌</div>
+      <div class= "task-done">Tarea completada: ❌</div>
     {% endif %}
+    <br>
+    <a class="button" href="{% url 'todo:task_detail' task.slug %}">Ver tarea</a>
+    <br><br>
+    <hr>
+    
   {% endfor %}
 
 {% endblock body %}

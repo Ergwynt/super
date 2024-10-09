@@ -1,9 +1,15 @@
-{% load static %}
+{% extends "todo/base.html"%}
+
 {% block body %}
   <h1> {{task.title}}</h1>
   <div class="task-date">{{task.created_at}}</div>
   <p>{{task.content}}</p>
+  {% if task.task_made %}
+      <div class= "task-done">✅</div>
+  {% else %}
+      <div class= "task-done">❌</div>
+  {% endif %}
 
 
-  <p><a href="{% url 'todo:home' %}">Return to home</a></p>
+  <p><a class="button" href="{% url 'todo:home' %}">Return to home</a></p>
 {% endblock body %}
